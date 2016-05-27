@@ -1,0 +1,18 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Canfield_Js::css/jquery-dd.css"/>
+    </head>
+    <body>
+        <referenceBlock name="catalog.product.related">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="canfield_dropdown" xsi:type="array">
+                            <item name="component" xsi:type="string">Canfield_Js/js/jquery.dd.min</item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>
