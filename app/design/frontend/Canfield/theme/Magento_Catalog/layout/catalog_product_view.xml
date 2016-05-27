@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="product.info.main">
+            <container name="product.info.formstart" htmlTag="div" htmlId="product-info-form-start" before="product.info.price">
+                <block class="Magento\Catalog\Block\Product\View"
+                       name="product.info.form.start" template="product/view/formstart.phtml"
+                       before="-" />
+            </container>
+        </referenceContainer>
+        <referenceBlock name="product.info.stock.sku" remove="true"/>
+        <move element="product.info.review" destination="product.info.main" before="product.info.price"/>
+        <move element="product.info.addtocart" destination="product.info.price" after="product.qty.box"/>
+        <move element="product.info.price" destination="product.info.formstart" after="product.info.form.start" />
+        <move element="product.info" destination="product.info.formstart" after="product.info.price" />
+        <referenceBlock name="product.info.addtocart.additional" remove="true"/>
+        <referenceContainer name="product.info.price">
+            <container name="product.info.qty" htmlTag="div" htmlId="qty-box" >
+                <block class="Magento\Catalog\Block\Product\View"
+                name="product.qty.box" template="product/view/qtybox.phtml"
+                after="product.price.final" />
+            </container>
+        </referenceContainer>
+    </body>
+
+</page>
