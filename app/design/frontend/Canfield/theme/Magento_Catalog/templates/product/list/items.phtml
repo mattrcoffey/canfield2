@@ -210,27 +210,30 @@ switch ($type = $block->getType()) {
                 );
                 $icount = clone $_ritems;
                 if($icount->count() > 0 ):
-                    echo $category["name"];
+                    //add to js array
                     $related[] = $category["class"];
                     ?>
-                    <select class="related-products" name="related-products[]" id="<?= $category["class"]; ?>">
-                        <?php $iterator = 1; ?>
-                        <option class="related-option" value="">
-                            <?= $category["name"]; ?>
-                            </option>
-                        <?php foreach ($_ritems->load() as $_ritem): ?>
+                    <div class="related-products container">
+                        <span class="related-products category"> <?= $category["name"]; ?></span>
+                        <select class="related-products select" name="related-products[]" id="<?= $category["class"]; ?>">
+                            <?php $iterator = 1; ?>
+                            <option class="related-option" value="">
+                                <?= $category["name"]; ?>
+                                </option>
+                            <?php foreach ($_ritems->load() as $_ritem): ?>
 
-                            <?php
-                            //$image = 'category_page_grid' or 'category_page_list';
-                            $_imagehelper = $this->helper('Magento\Catalog\Helper\Image');
-                            $productImage = $_imagehelper->init($_ritem, $image)->constrainOnly(FALSE)->keepAspectRatio(TRUE)->keepFrame(FALSE)->resize(100)->getUrl();
-                            ?>
-                            <option class="related-option" data-image="<?= $productImage; ?>" value="<?= $_ritem->getId(); ?>">
-                                <?php echo $block->escapeHtml($_ritem->getName()) ?> -
-                                    <?php /* @escapeNotVerified */ echo $block->getProductPrice($_ritem); ?>
-                            </option>
-                        <?php endforeach ?>
-                    </select>
+                                <?php
+                                //$image = 'category_page_grid' or 'category_page_list';
+                                $_imagehelper = $this->helper('Magento\Catalog\Helper\Image');
+                                $productImage = $_imagehelper->init($_ritem, $image)->constrainOnly(FALSE)->keepAspectRatio(TRUE)->keepFrame(FALSE)->resize(100)->getUrl();
+                                ?>
+                                <option class="related-option" data-image="<?= $productImage; ?>" value="<?= $_ritem->getId(); ?>">
+                                    <?php echo $block->escapeHtml($_ritem->getName()) ?> -
+                                        <?php /* @escapeNotVerified */ echo $block->getProductPrice($_ritem); ?>
+                                </option>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
                 <?php endif; ?>
             <?php endforeach ?>
         </div>
