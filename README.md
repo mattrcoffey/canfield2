@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/magento/magento2.svg?branch=master)](https://travis-ci.org/magento/magento2)
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/magento/magento2?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 <h2>Welcome</h2>
 Welcome to Magento 2 installation! We're glad you chose to install Magento 2, a cutting edge, feature-rich eCommerce solution that gets results.
 
@@ -72,3 +70,7 @@ To suggest documentation improvements, click [here][4].
 [2]: <http://devdocs.magento.com/guides/v2.0/contributor-guide/contributing.html#report>
 [3]: <https://github.com/magento/magento2/issues>
 [4]: <http://devdocs.magento.com>
+=======
+# canfield2
+canfield magento 2
+>>>>>>> 4df33dd1a56d30e25343dbf9b402438c25cc959d
