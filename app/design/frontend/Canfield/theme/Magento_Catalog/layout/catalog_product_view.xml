@@ -13,8 +13,13 @@
                        name="product.info.form.start" template="product/view/formstart.phtml"
                        before="-" />
             </container>
+
         </referenceContainer>
+
+        <move element="catalog.product.related" destination="product.info.main" />
         <referenceBlock name="product.info.stock.sku" remove="true"/>
+        <referenceBlock name="product.info.overview" remove="true"/>
+
         <move element="product.info.review" destination="product.info.main" before="product.info.price"/>
         <move element="product.info.addtocart" destination="product.info.price" after="product.qty.box"/>
         <move element="product.info.price" destination="product.info.formstart" after="product.info.form.start" />
